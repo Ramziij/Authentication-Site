@@ -1,6 +1,10 @@
-import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+
+import * as React from 'react';
+
+import SpeedDial from '@mui/material/SpeedDial';
+import HelpIcon from '@mui/icons-material/Help';
 
 function App() {
   return (
@@ -19,6 +23,11 @@ function App() {
           Learn React
         </a>
       </header>
+      <SpeedDial
+      ariaLabel="Navigation speed dial"
+      sx={{ position: 'absolute', bottom: 100, right: 16 }}
+      icon={<HelpIcon />}
+      ></SpeedDial>
     </div>
   );
 }
