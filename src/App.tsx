@@ -1,35 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
-import * as React from 'react';
-
-import SpeedDial from '@mui/material/SpeedDial';
-import HelpIcon from '@mui/icons-material/Help';
+import { useTour } from '@reactour/tour'
 
 function App() {
+  const { setIsOpen } = useTour()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <SpeedDial
-      ariaLabel="Navigation speed dial"
-      sx={{ position: 'absolute', bottom: 100, right: 16 }}
-      icon={<HelpIcon />}
-      ></SpeedDial>
-    </div>
-  );
+    <>
+      <p className="first-step">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at
+        finibus nulla, quis varius justo. Vestibulum lorem lorem, viverra porta
+        metus nec, porta luctus orci
+      </p>
+
+      <p className="second-step">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at
+        finibus nulla, quis varius justo. Vestibulum lorem lorem, viverra porta
+        metus nec, porta luctus orci
+      </p>
+      
+      <button onClick={() => setIsOpen(true)}>Open Tour</button>
+    </>
+  )
 }
 
 export default App;

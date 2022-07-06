@@ -1,21 +1,31 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+import { StepType, TourProvider } from '@reactour/tour'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
+const steps:StepType[] = [
+  {
+    selector: '.first-step',
+    content: <button>Open tour</button>,
+  },
+  {
+    selector:'.second-step',
+    content:<button>Open tour</button>,
+  }
+]
+
+ReactDOM.render(
+  <TourProvider steps={steps}>
     <App />
-  </React.StrictMode>
-);
+  </TourProvider>,
+  document.getElementById('root')
+)
 
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
+
+
 reportWebVitals();
