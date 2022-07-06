@@ -1,23 +1,15 @@
-import { useTour } from '@reactour/tour'
+import React from 'react';
+import Login from './components/login_component'
+import MyAppBar from './components/UI/MyAppBar'
 
-function App() {
-  const { setIsOpen } = useTour()
+const App: React.FunctionComponent = () => {
   return (
-    <>
-      <p className="first-step">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at
-        finibus nulla, quis varius justo. Vestibulum lorem lorem, viverra porta
-        metus nec, porta luctus orci
-      </p>
-
-      <p className="second-step">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at
-        finibus nulla, quis varius justo. Vestibulum lorem lorem, viverra porta
-        metus nec, porta luctus orci
-      </p>
-      
-      <button onClick={() => setIsOpen(true)}>Open Tour</button>
-    </>
+  <div className="container">
+    <MyAppBar />
+        <div className="box">
+          <Login />
+        </div>
+  </div> 
   )
 }
 
