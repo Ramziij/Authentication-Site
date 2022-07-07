@@ -1,5 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React,{ FC } from "react";
 import { useForm, SubmitHandler, useFormState, Controller } from "react-hook-form";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -14,7 +13,7 @@ interface IFormInput {
   password: string;
 }
 
-const Login: React.FunctionComponent = () => {
+const Login: FC = () => {
   const { control, handleSubmit} = useForm<IFormInput>();
   const { errors } = useFormState({
     control
@@ -24,7 +23,16 @@ const Login: React.FunctionComponent = () => {
   return (
     <div className="all_form">
     <form onSubmit={handleSubmit(onSubmit)}>
-        <Box sx={{'& > :not(style)': { m: 1, width: '300px'},}}>
+        <Box sx={{
+          display: 'flex', 
+          alignContent: 'center', 
+          marginLeft: 'auto', 
+          alignItems: 'center', 
+          width: '300px', 
+          height: '300px', 
+          marginRight: 'auto', 
+          padding: '40px 40px',
+          flexDirection: 'column'}}>
         <Controller 
         control={control}
         name="login"
@@ -36,7 +44,7 @@ const Login: React.FunctionComponent = () => {
             value={ field.value }
             size="small" 
             margin="normal" 
-            fullWidth={ false }
+            fullWidth={ true }
             placeholder="Login or Email" 
             error={!!errors.login?.message}
             helperText={errors.login?.message}/>
@@ -54,7 +62,7 @@ const Login: React.FunctionComponent = () => {
           value= { field.value } 
           size="small" 
           margin="normal" 
-          fullWidth={ false }
+          fullWidth={ true }
           type="password" 
           placeholder="Password"
           error={!!errors.password?.message}
@@ -62,7 +70,14 @@ const Login: React.FunctionComponent = () => {
         )
     }
     />
-        <Button type="submit" variant="contained">Push</Button>
+        
+        <Button  sx={{
+            width:"300px", 
+            display: 'flex',
+            margin: '5px'}} 
+            size="medium" 
+            type="submit" 
+            variant="contained">Submit</Button>
         </Box>
     </form>
     </div>
