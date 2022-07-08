@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { loginValidation, passwordValidation } from "../services/validation";
+import Avatar from '@mui/material/Avatar';
 
 
 
@@ -24,15 +25,18 @@ const Login: FC = () => {
     <div className="all_form">
     <form onSubmit={handleSubmit(onSubmit)}>
         <Box sx={{
-          display: 'flex', 
+          display: 'flex',
+          border: '1px solid gray', 
           alignContent: 'center', 
           marginLeft: 'auto', 
           alignItems: 'center', 
           width: '300px', 
           height: '300px', 
-          marginRight: 'auto', 
+          marginRight: 'auto',
+          marginTop: '20px', 
           padding: '40px 40px',
           flexDirection: 'column'}}>
+        <Avatar sx={{width: 56, height: 56, margin: 1}}/>
         <Controller 
         control={control}
         name="login"
