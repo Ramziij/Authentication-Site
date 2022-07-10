@@ -23,3 +23,15 @@ export const passwordValidation ={
         return true
     }
 }
+
+export const emailValidation ={
+    required: 'required',
+    validate: (value: string) => {
+        if (value.match(/[а-яА-Я]/)){
+            return 'Email can contain only the Latin alphabet'
+        }
+        if (value.length < 4) {
+            return 'Email must be longer than 4 symbols'
+        }
+    }
+}

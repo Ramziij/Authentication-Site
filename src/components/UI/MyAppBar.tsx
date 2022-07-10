@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { Link, Outlet } from "react-router-dom";
 
 
 
@@ -16,8 +17,9 @@ const MyAppBar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Authentication
           </Typography>
-          <Button color="inherit">Login</Button>
-          <Button color="inherit">Sign Up</Button>
+          <Link to={"/"} style={{textDecoration:'none', color: 'white'}}><Button color="inherit">Home</Button></Link>
+          <Link to={"/login"} style={{textDecoration:'none', color: 'white'}}><Button color="inherit">Login</Button></Link>
+          <Link to={"/register"} style={{textDecoration:'none', color: 'white'}}><Button color="inherit">Sign Up</Button></Link>
         </Toolbar>
       </AppBar>
     </Box>
